@@ -8,7 +8,7 @@
 
 This repository has the intention of make a project's summary using the [Feynman Technique](https://www.colorado.edu/artssciences-advising/resource-library/life-skills/the-feynman-technique-in-academic-coaching). This technique consists to learn teach something that we learn about. I will explain each project and highlight the most important parts of it. Hope you enjoy it!!!
 
-## Project's Summary
+## Summary
   1. **Pyramid Generator**;
   2. **Role Playing Game**;
   3. **Calorie Counter**;

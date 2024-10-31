@@ -1,4 +1,5 @@
-const character = "#";
+const character = "▲";
+const invertedCharacter = "▼";
 const count = 8;
 const rows = [];
 let inverted = true;
