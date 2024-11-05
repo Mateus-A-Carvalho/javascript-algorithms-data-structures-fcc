@@ -12,8 +12,7 @@ This is a solution to the [Pyramid Generator - Freecodecamp Javascript Certifica
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-    - [Useful resources](#useful-resources)
+    - [Original Code](#original-code)
   - [Author](#author)
   - [Acknowledgments](#acknowledgments)
 
@@ -39,40 +38,71 @@ This screenshot show how the project finished.
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+In this projejct, I learned few things. One of these was **return value of functions**. In functions, you can return basicly **ANYTHING** that you want. To explain more, soon we will see more about the code.
 
-To see how you can add code snippets, see below:
+### Original Code
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+Here is the original code, made by Freecodecamp:
+
+```javascript
+const character = "#";
+const count = 8;
+const rows = [];
+let inverted = true;
+
+function padRow(rowNumber, rowCount) {
+  return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);
+}
+
+for (let i = 1; i <= count; i++) {
+  if (inverted) {
+    rows.unshift(padRow(i, count));
+  } else {
+    rows.push(padRow(i, count));
+  }
+}
+
+let result = ""
+
+for (const row of rows) {
+  result = result + "\n" + row;
+}
+
+console.log(result);
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+Explaining the function return we have this:
+`return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);`
+
+1. `" ".repeat(rowCount - rowNumber)` - This code repeat an empty string many time as parameters say. It repeats itself twice, once at the beginnig and once at the end. `rowCount` in the loop the first time will be the `count` variable(*8 in this case*) minus `rowNumber` that obey the order of loop. So, in the first lap of loop we have: **rowCount - rowNumber(8 - 1 = 7)**. In the second lap we have: **rowCount - rowNumber(8 - 2 = 6)** and so on.
+2. `character.repeat(2 * rowNumber - 1)` - Here we repeat the `character` variable in odd numbers. In the first lap of loop we have: **2 * rowNumber(1) - 1 = 1**. In the second lap we have: **2 * rowNumber(2) - 1 = 3** and so on.
+
+
+The second part of this code that I will explai is the first loop `for` that makes the pyramid. This is the code: 
+```javascript
+for (let i = 1; i <= count; i++) {
+  if (inverted) {
+    rows.unshift(padRow(i, count));
+  } else {
+    rows.push(padRow(i, count));
+  }
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+This code basicly check if `inverted` variable checks `true` of `false` to defines the direction of pyramid construction and then call the `padRow()` function with `i` and `count` parameters. If it test `true`, the return of function will be added always in the first index of `rows` array, making thee first result **(remember, repeating 7 times an empty string and 1 time the `character` variable)** with `.unshift()` method. This method always add an element in the begining of an array. Otherwise, if it test `false`, the returning of function will be added always in the last index of `rows` array with `.push()`, making it in the crescent order.
+
+This third part of this code that I will explain is the second loop `for...of`. This loop statement iterates over the values of data structures ***(arrays, objects, Maps, NodeLits and more)***. Here is the code: 
+
+```javascript
+let result = ""
+
+for (const row of rows) {
+  result = result + "\n" + row;
 }
+
+console.log(result)
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
