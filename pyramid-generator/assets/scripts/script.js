@@ -1,3 +1,12 @@
+const bodyEl = document.querySelector(`body`)
+const containerEl = document.createElement(`div`);
+const btnInvertedFalse = document.createElement(`button`);
+const btnInvertedTrue = document.createElement(`button`);
+
+bodyEl.appendChild(containerEl);
+containerEl.appendChild(btnInvertedFalse);
+containerEl.appendChild(btnInvertedTrue)
+
 let character = "▲";
 const invertedCharacter = "▼";
 const count = 10;
@@ -22,7 +31,6 @@ let result = ""
 
 for (const row of rows) {
   result = result + "\n" + row;
-  console.log(result)
 }
 
 console.log(result)

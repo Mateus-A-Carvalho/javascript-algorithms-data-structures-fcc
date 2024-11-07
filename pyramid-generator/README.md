@@ -13,6 +13,7 @@ This is a solution to the [Pyramid Generator - Freecodecamp Javascript Certifica
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
     - [Original Code](#original-code)
+  - [Improvements](#improvements)
   - [Author](#author)
   - [Acknowledgments](#acknowledgments)
 
@@ -100,8 +101,14 @@ for (const row of rows) {
 
 console.log(result)
 ```
+The first step is a variable with `let` called result that is an empty string. It will be used to assign the result of loops in `for...of`. Let take a look what happens within the body of this loop:
+
+  1. `result = result + "\n" + row;`: Here I assign in the `result` variable the elements of `rows` array. `"\n"` is a ***scape character*** used to create a new line. So, in summary, `result` assign and create a new line in each loop and add the corresponding element in `rows` array.
 
 
+## Improvements
+
+To this project become more dynamic, I made the decision to create more applications.
 
 
 ## Author
