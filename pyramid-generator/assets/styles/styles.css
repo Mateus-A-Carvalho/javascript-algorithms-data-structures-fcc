@@ -12,4 +12,14 @@ html {
 
 body {
   height: 100%;
+  background-color: #F2C1AE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
