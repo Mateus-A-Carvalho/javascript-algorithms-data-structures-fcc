@@ -20,6 +20,13 @@ body {
 
 .container{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  border: 1px solid #000;
+  padding: 2rem;
+  width: 50%;
+  height: 50%;
+  background-color: #F0F8FF;
 }
+
