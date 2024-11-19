@@ -4,21 +4,21 @@ const paragraphEl = document.querySelector(`#result`)
 const invertedFalseBtnEl = document.querySelector(`#inverted-false-btn`)
 const invertedTrueBtnEl = document.querySelector(`#inverted-true-btn`)
 
-let character = "▲";
+// let character = ``
 const count = 10;
-const rows = [];
 let inverted = false;
+const rows = [];
 let result = ""
 
 
 
 
+
 const padRow = (rowNumber, rowCount) => {
+  let character = inverted ? invertedTrueBtnEl.textContent : invertedFalseBtnEl.textContent;
+  console.log(character)
   return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);
 }
-
-// Function returns text content of buttons;
-const invertedOrNot = id => id === "inverted-false-btn" ? invertedFalseBtnEl.textContent : invertedTrueBtnEl.textContent;
 
 // Function build rows array;
 const buildingCharArr = () => {
@@ -33,6 +33,7 @@ const buildingCharArr = () => {
 
 // Function return the result printed in console;
 const printResult = () => {
+
   for (const row of rows) {
     result = result + "\n" + row;
   }
@@ -42,13 +43,14 @@ const printResult = () => {
 
 
 invertedFalseBtnEl.addEventListener(`click`, () => {
+  paragraphEl.innerHTML = ``;
   buildingCharArr();
   printResult();
-  invertedOrNot(invertedFalseBtnEl.id)
 });
 
 invertedTrueBtnEl.addEventListener(`click`, () => {
+  inverted = true;
+  paragraphEl.innerHTML = ``;
   buildingCharArr();
   printResult();
-  invertedOrNot(invertedTrueBtnEl.id)
 });
