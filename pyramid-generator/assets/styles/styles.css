@@ -30,8 +30,13 @@ body {
 }
 
 p {
+  width: 36rem;
+  height: 20rem;
   font-size: 2rem;
-  text-wrap: wrap;
+}
+
+p pre {
+  text-align: center;
 }
 
 .container__buttons {
