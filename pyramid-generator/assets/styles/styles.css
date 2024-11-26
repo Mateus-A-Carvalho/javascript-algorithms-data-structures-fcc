@@ -16,6 +16,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.8rem;
 }
 
 .container{
@@ -32,11 +33,8 @@ body {
 p {
   width: 36rem;
   height: 20rem;
-  font-size: 2rem;
-}
-
-p pre {
   text-align: center;
+  padding: 2rem 1rem;
 }
 
 .container__buttons {
@@ -51,4 +49,21 @@ p pre {
 button {
   width: 50%;
   height: 4rem;
+  outline: none;
+  cursor: pointer;
+  transition: 
+    transform 250ms ease-in-out;
+}
+
+.container,
+button {
+  box-shadow: 0 .4rem .8rem rgba(0, 0, 0, .3);
+}
+
+button:hover {
+  transform: scale(1.050);
+}
+
+button:active {
+  transform: scale(0.950);
 }

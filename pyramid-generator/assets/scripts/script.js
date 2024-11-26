@@ -31,7 +31,7 @@ const buildingCharArr = () => {
 const printResult = () => {
 
   for (const row of rows) {
-    result = `${result} \n ${row}`;
+    result = `${result}\n${row}`;
   }
 
   return paragraphEl.innerHTML = `<pre>${result}</pre>`;
