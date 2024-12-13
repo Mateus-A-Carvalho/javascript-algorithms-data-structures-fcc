@@ -14,8 +14,8 @@ This is a solution to the [Pyramid Generator - Freecodecamp Javascript Certifica
     - [What I learned](#what-i-learned)
     - [Original Code](#original-code)
   - [Improvements](#improvements)
+  - [Changes](#changes)
   - [Author](#author)
-  - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -110,17 +110,19 @@ The first step is a variable with `let` called result that is an empty string. I
 
 To this project become more dynamic, I made the decision to create more applications.
 
+![Switching value](./assets/public/updated-project.gif);
+
+The first thing that I changed was to make the code more modern with ES6. All the function is variable with ***Arrow Functions***. This approach has the same result of creating a function in tradicional way, except to the ***this*** keyword and invoking function. The second change was use more times the ***Ternary Operator***. This operator, as I learned in this certification, is a powerful resource to makes the code cleaner. Now, I will explain the changes that I've made.
+
+## Changes
+
+   1. **Arrow Functions**: All the functions was switched for *Arrow Functions*. 
+   2. **HTML Structure**: I've add some elements to user see the logic working. There is two ``<button>`` elements to give the option to choose if ``character`` will be inverted or not.
+   3. **Ternary operator**: I decided to use more times the ``Ternary Operator`` instead ``if/else``.
+
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Twitter - [@yourusername](https://x.com/O_DevCarvalho)
+- Github - [Mateus-A-Carvalho](https://github.com/O-DevCarvalho)
+- Instagram - [o.mateus.carvalho.dev](https://www.instagram.com/o.mateus.carvalho.dev/)
