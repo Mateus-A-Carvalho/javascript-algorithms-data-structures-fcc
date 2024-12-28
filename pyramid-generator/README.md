@@ -123,6 +123,6 @@ The first thing that I changed was to make the code more modern with ES6. All th
 
 ## Author
 
-- Twitter - [@yourusername](https://x.com/O_DevCarvalho)
+- Twitter - [@O_DevCarvalho](https://x.com/O_DevCarvalho)
 - Github - [Mateus-A-Carvalho](https://github.com/O-DevCarvalho)
 - Instagram - [o.mateus.carvalho.dev](https://www.instagram.com/o.mateus.carvalho.dev/)

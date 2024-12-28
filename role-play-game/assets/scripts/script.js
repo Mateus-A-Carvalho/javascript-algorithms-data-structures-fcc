@@ -41,6 +41,7 @@ const monsters = [
     health: 300
   }
 ]
+
 const locations = [
   {
     name: "town square",
