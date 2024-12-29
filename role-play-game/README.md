@@ -15,6 +15,8 @@ This is a solution to the [Role Playing Game(RPG) - Website's challenge](https:/
     - [What I learned](#what-i-learned)
       - [Main Variables](#main-variables)
       - [The logic of code](#the-logic-of-code)
+      - [Explaining functions](#explaining-functions)
+        - [``update()``](#update)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -49,7 +51,7 @@ This project doesn't have a lot of chagens about the original code and my own co
 
 #### Main Variables
 
-Theres is some variables to know before start the project. These wil be helpful in the future.
+There is some variables to know before start the project. These wil be helpful in the future.
 
 ```javascript
 let xp = 0;
@@ -115,6 +117,26 @@ const monsters = [
 ```
 
 The last one array is an object.``locations``. This contains ``name``, ``button text`` array that has the text of each location that will appear as ``textContent`` when ``update()`` is called, ``buttons functions`` that is another array with ***reference*** of function that will used in ``update()`` and the last key is ``text`` that will appear when ``update()`` is called.
+
+#### Explaining functions
+
+At this point, we come across with a few functions. So as not to make it too long, I will talk about it three at time. The firsts ones are ``update()``, ``goTown()``, ``goStore()`` and ``goCave()`` functions.
+
+  ##### ``update()``
+  
+  ```javascript
+  const update = (location) => {
+  monsterStats.style.display = "none";
+  button1.innerText = location["button text"][0];
+  button2.innerText = location["button text"][1];
+  button3.innerText = location["button text"][2];
+  
+  button1.onclick = location["button functions"][0];
+  button2.onclick = location["button functions"][1];
+  button3.onclick = location["button functions"][2];
+  text.innerHTML = location.text;
+}
+  ```
 
 ### Continued development
 
