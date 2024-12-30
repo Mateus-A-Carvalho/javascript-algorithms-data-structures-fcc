@@ -137,6 +137,8 @@ At this point, we come across with a few functions. So as not to make it too lon
   text.innerHTML = location.text;
 }
   ```
+This function takes a parameter called "location" that is an array of objects. In this function, the first thing that happens is set ``monsterStats.style.display`` to ``none``. This makes the container dissapear. Then, we set the buttons ``innerText`` to the respective ``location[´"button text"][index]``. Now, we used almost same syntax to assing the reference of functions to the ``buttons.onclick``, finally assing the ``text.innerHTML`` to the ``location.text``. This will take any place in the game and render the correct informations about it.  
+
 
 ### Continued development
 
