@@ -17,6 +17,9 @@ This is a solution to the [Role Playing Game(RPG) - Website's challenge](https:/
       - [The logic of code](#the-logic-of-code)
       - [Explaining functions](#explaining-functions)
         - [``update()``](#update)
+        - [``goTown()``, ``goStore()`` and ``goCave()`` funtions](#gotown-gostore-and-gocave-funtions)
+        - [``buyHealth()`` function](#buyhealth-function)
+        - [buyWeapon() function](#buyweapon-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -139,6 +142,45 @@ At this point, we come across with a few functions. So as not to make it too lon
   ```
 This function takes a parameter called "location" that is an array of objects. In this function, the first thing that happens is set ``monsterStats.style.display`` to ``none``. This makes the container dissapear. Then, we set the buttons ``innerText`` to the respective ``location[´"button text"][index]``. Now, we used almost same syntax to assing the reference of functions to the ``buttons.onclick``, finally assing the ``text.innerHTML`` to the ``location.text``. This will take any place in the game and render the correct informations about it.  
 
+  ##### ``goTown()``, ``goStore()`` and ``goCave()`` funtions
+
+Theses three functions basically take a parameters that is the ``locations`` array and work with this data.
+
+```javascript
+function goTown() {
+  update(locations[0]);
+}
+
+function goStore() {
+  update(locations[1]);
+}
+
+function goCave() {
+  update(locations[2]);
+}
+```
+  ##### ``buyHealth()`` function
+
+This functions leads with functionality of buying health. First of all, we need to check if ``gold`` is greater or equal than **10**(health's price). If it is, we subtract **10** to ``gold``, add **10** to ``health``, than set ``goldText.innerText`` and ``healthText.innerText`` to ``gold`` and ``health``, respectivelly. If this condition is false, we print a message alerting that there is no enough gold.
+
+```javascript
+function buyHealth() {
+  if (gold >= 10) {
+    gold -= 10;
+    health += 10;
+    goldText.innerText = gold;
+    healthText.innerText = health;
+  } else {
+    text.innerText = `You do not have enough gold to buy health.`;
+  }
+}
+```
+
+##### buyWeapon() function
+
+Now, I will explain this function that implement the funcionality of buy weapons. The first thing that happens is an ``if/else`` statement cheking if `curentWeapon` is less than ``weapons.length - 1``. Remember that ``currentWeapon`` was already declared in the beginning of code with **0**.  Also remember that ``weapons`` is an *array* that have *objects* with ``name`` and ``power`` of weapons in the game. So, checking if ``currentWeapon`` is less than ``weapons`` prevent the user to buy some weapon that doesn't exist. After it, there is another condition to check if ``gold`` is greater or equal **30**(***The price to buy another weapon***). If it is, ``currentWeapon`` is incremented by **1** and ``goldText.innerText`` is assigned by ``gold``. The next step is create a new variable with `let` called ``newWeapon`` and assign it to the ``weapons[curentWeapon].name``(*the increment in the currentWeapon makes it go to the next index in the weapons array*). Then, we set the text.innerText with a message using template literals. Then, we add this new weapon to the `inventory` array with ``inventory.push(newWeapon)`` method and add to the text other text that tell us which weapon we have in the ``inventory``. If this condition tests false, the ``text.innerText`` prints the message that we don't have enough gold. 
+
+Going to the outermost condition(``if(currentWeapon < weapons.length - 1)``), if this condition is false, then we will print in ``text.innerText`` a message that tell us that we already have the powerful weapon in game. After it, the ``button2.innetText`` are assign to "***Sell weapon for 15 gold***". Finally, ``button2.onclick`` is assigned to ``sellWeapon`` reference.
 
 ### Continued development
 
