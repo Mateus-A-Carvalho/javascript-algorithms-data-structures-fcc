@@ -20,6 +20,7 @@ This is a solution to the [Role Playing Game(RPG) - Website's challenge](https:/
         - [``goTown()``, ``goStore()`` and ``goCave()`` funtions](#gotown-gostore-and-gocave-funtions)
         - [``buyHealth()`` function](#buyhealth-function)
         - [buyWeapon() function](#buyweapon-function)
+        - [sellWeapon() function](#sellweapon-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -181,6 +182,11 @@ function buyHealth() {
 Now, I will explain this function that implement the funcionality of buy weapons. The first thing that happens is an ``if/else`` statement cheking if `curentWeapon` is less than ``weapons.length - 1``. Remember that ``currentWeapon`` was already declared in the beginning of code with **0**.  Also remember that ``weapons`` is an *array* that have *objects* with ``name`` and ``power`` of weapons in the game. So, checking if ``currentWeapon`` is less than ``weapons`` prevent the user to buy some weapon that doesn't exist. After it, there is another condition to check if ``gold`` is greater or equal **30**(***The price to buy another weapon***). If it is, ``currentWeapon`` is incremented by **1** and ``goldText.innerText`` is assigned by ``gold``. The next step is create a new variable with `let` called ``newWeapon`` and assign it to the ``weapons[curentWeapon].name``(*the increment in the currentWeapon makes it go to the next index in the weapons array*). Then, we set the text.innerText with a message using template literals. Then, we add this new weapon to the `inventory` array with ``inventory.push(newWeapon)`` method and add to the text other text that tell us which weapon we have in the ``inventory``. If this condition tests false, the ``text.innerText`` prints the message that we don't have enough gold. 
 
 Going to the outermost condition(``if(currentWeapon < weapons.length - 1)``), if this condition is false, then we will print in ``text.innerText`` a message that tell us that we already have the powerful weapon in game. After it, the ``button2.innetText`` are assign to "***Sell weapon for 15 gold***". Finally, ``button2.onclick`` is assigned to ``sellWeapon`` reference.
+
+##### sellWeapon() function
+
+In this function, I will explain how each line works to sell a weapon of your ``inventory``. The first step is check if ``inventory.length`` is greater than ***1***. This prevents that the function sell a weapon that doesn't exist. Inside this ``if/else`` statement, we assign ***+15*** to the ``gold`` and this current value to the ``goldText.innerText`` value. After, we take out the first element of ``inventory`` array with ``inventory.shift()``. After that, the ``text.innerText`` receive two messages. If the condition is false, the ``else`` block code assings in the ``text.innerText`` a message saying preventing to don't sell your only weapon.
+
 
 ### Continued development
 
