@@ -21,6 +21,8 @@ This is a solution to the [Role Playing Game(RPG) - Website's challenge](https:/
         - [``buyHealth()`` function](#buyhealth-function)
         - [buyWeapon() function](#buyweapon-function)
         - [sellWeapon() function](#sellweapon-function)
+        - [``fightSlime()``, ``figthBeast()`` and ``fightDragon()`` functions](#fightslime-figthbeast-and-fightdragon-functions)
+        - [goFight() function](#gofight-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -183,10 +185,79 @@ Now, I will explain this function that implement the funcionality of buy weapons
 
 Going to the outermost condition(``if(currentWeapon < weapons.length - 1)``), if this condition is false, then we will print in ``text.innerText`` a message that tell us that we already have the powerful weapon in game. After it, the ``button2.innetText`` are assign to "***Sell weapon for 15 gold***". Finally, ``button2.onclick`` is assigned to ``sellWeapon`` reference.
 
+```javascript
+function buyWeapon() {
+  if (currentWeapon < weapons.length - 1) {
+    if (gold >= 30) {
+      gold -= 30;
+      currentWeapon++;
+      goldText.innerText = gold;
+      let newWeapon = weapons[currentWeapon].name;
+      text.innerText = `You now have a ${newWeapon}.`;
+      inventory.push(newWeapon);
+      text.innerText += ` In your inventory you have: ${inventory}`;
+    } else {
+      text.innerText = `You do not have enough gold to buy a weapon.`;
+    }
+  } else {
+    text.innerText = `You already have the most powerful weapon!`;
+    button2.innerText = `Sell weapon for 15 gold`;
+    button2.onclick = sellWeapon;
+  }
+}
+```
+
 ##### sellWeapon() function
 
 In this function, I will explain how each line works to sell a weapon of your ``inventory``. The first step is check if ``inventory.length`` is greater than ***1***. This prevents that the function sell a weapon that doesn't exist. Inside this ``if/else`` statement, we assign ***+15*** to the ``gold`` and this current value to the ``goldText.innerText`` value. After, we take out the first element of ``inventory`` array with ``inventory.shift()``. After that, the ``text.innerText`` receive two messages. If the condition is false, the ``else`` block code assings in the ``text.innerText`` a message saying preventing to don't sell your only weapon.
 
+```javascript
+function sellWeapon() {
+  if (inventory.length > 1) {
+    gold += 15;
+    goldText.innerText = gold;
+    let currentWeapon = inventory.shift();
+    text.innerText = `You sold a ${currentWeapon}. In your inventory you have: ${inventory}`;
+  } else {
+    text.innerText = `Don't sell your only weapon!`;
+  }
+}
+```
+
+##### ``fightSlime()``, ``figthBeast()`` and ``fightDragon()`` functions
+
+The next functions are simply. They assign a corresponding value to ``fighting`` variable and call goFight() function. The number assigned in ``fighting`` will be usefull to set the name and health of monsters.
+
+```javascript
+function fightSlime() {
+  fighting = 0;
+  goFight();
+}
+
+function fightBeast() {
+  fighting = 1;
+  goFight();
+}
+
+function fightDragon() {
+  fighting = 2;
+  goFight();
+}
+```
+
+##### goFight() function
+
+First of all, this function calls ``update(locations[3])`` function with it's corresponding parameter. Then, set monsterHealth with value ``monsters[fighting].health`` to show the health of monsters. The next line makes the monster status appear, using ``monsterStatus.style.display = "block"``. Then, we set ``monsterName.innerText`` to ``monster[fighting].name`` and ``monsterHealthText.innerText`` to monsterHealth.
+
+```javascript
+function goFight() {
+  update(locations[3]);
+  monsterHealth = monsters[fighting].health;
+  monsterStats.style.display = "block";
+  monsterName.innerText = monsters[fighting].name;
+  monsterHealthText.innerText = monsterHealth;
+}
+```
 
 ### Continued development
 
