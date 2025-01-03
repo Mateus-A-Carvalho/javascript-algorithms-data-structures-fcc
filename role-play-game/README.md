@@ -23,6 +23,7 @@ This is a solution to the [Role Playing Game(RPG) - Website's challenge](https:/
         - [sellWeapon() function](#sellweapon-function)
         - [``fightSlime()``, ``figthBeast()`` and ``fightDragon()`` functions](#fightslime-figthbeast-and-fightdragon-functions)
         - [goFight() function](#gofight-function)
+        - [attack() function](#attack-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -258,6 +259,18 @@ function goFight() {
   monsterHealthText.innerText = monsterHealth;
 }
 ```
+
+##### attack() function
+
+Now is time to take more time to explain this complex and detailed function. The first thing that happens is set a text saying that monter attacked and which weapon you used, in ``text.innetText``. After it, our health is decreased with ``health -= getMonsterAttackValue(monsters[fighting].level);``. The ``getMonsterAttackValue()`` will be explain later. Now we have a conditional statement that checks if ``isMonsterHit()`` evaluates truthy. Is it is, ``monsterHealth`` is decreased using the following expression:
+
+> ``monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;``
+
+This expression decreases the ``monsterHealth`` with compound subtraction operator, taking the weapon power key in ``weapons.power`` and add a random number multiplying by ``xp`` and adding **1** to result. Adding one makes the value of ``Math.floor()`` take the number deleted. 
+
+After it, if this condition test false, ``text.innerText`` say "You missed".
+
+
 
 ### Continued development
 
