@@ -195,7 +195,7 @@ function attack() {
   } else {
     text.innerText += ` You missed.`;
   }
-  
+
   healthText.innerText = health;
   monsterHealthText.innerText = monsterHealth;
   if (health <= 0) {
@@ -208,7 +208,7 @@ function attack() {
     }
   }
   if (Math.random() <= .1 && inventory.length !== 1) {
-    text.innerText += " Your " + inventory.pop() + " breaks.";
+    text.innerText += ` Your ${inventory.pop()} breaks.`;
     currentWeapon--;
   }
 }
