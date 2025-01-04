@@ -268,7 +268,11 @@ Now is time to take more time to explain this complex and detailed function. The
 
 This expression decreases the ``monsterHealth`` with compound subtraction operator, taking the weapon power key in ``weapons.power`` and add a random number multiplying by ``xp`` and adding **1** to result. Adding one makes the value of ``Math.floor()`` take the number deleted. 
 
-After it, if this condition test false, ``text.innerText`` say "You missed".
+After it, if this condition test false, ``text.innerText`` say "You missed". 
+
+Now, we set ``healthText.innerText`` to ``health``. ``monsterHealth.innerText`` to ``monsterHealth``.
+
+
 
 
 
