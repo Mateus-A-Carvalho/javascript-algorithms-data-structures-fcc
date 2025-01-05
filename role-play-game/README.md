@@ -19,11 +19,13 @@ This is a solution to the [Role Playing Game(RPG) - Website's challenge](https:/
         - [``update()``](#update)
         - [``goTown()``, ``goStore()`` and ``goCave()`` funtions](#gotown-gostore-and-gocave-funtions)
         - [``buyHealth()`` function](#buyhealth-function)
-        - [buyWeapon() function](#buyweapon-function)
-        - [sellWeapon() function](#sellweapon-function)
+        - [``buyWeapon()`` function](#buyweapon-function)
+        - [``sellWeapon()`` function](#sellweapon-function)
         - [``fightSlime()``, ``figthBeast()`` and ``fightDragon()`` functions](#fightslime-figthbeast-and-fightdragon-functions)
-        - [goFight() function](#gofight-function)
-        - [attack() function](#attack-function)
+        - [``goFight()`` function](#gofight-function)
+        - [``attack()`` function](#attack-function)
+        - [``getMonsterAttackValue()`` function](#getmonsterattackvalue-function)
+        - [``isMonsterHit()`` function](#ismonsterhit-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -180,7 +182,7 @@ function buyHealth() {
 }
 ```
 
-##### buyWeapon() function
+##### ``buyWeapon()`` function
 
 Now, I will explain this function that implement the funcionality of buy weapons. The first thing that happens is an ``if/else`` statement cheking if `curentWeapon` is less than ``weapons.length - 1``. Remember that ``currentWeapon`` was already declared in the beginning of code with **0**.  Also remember that ``weapons`` is an *array* that have *objects* with ``name`` and ``power`` of weapons in the game. So, checking if ``currentWeapon`` is less than ``weapons`` prevent the user to buy some weapon that doesn't exist. After it, there is another condition to check if ``gold`` is greater or equal **30**(***The price to buy another weapon***). If it is, ``currentWeapon`` is incremented by **1** and ``goldText.innerText`` is assigned by ``gold``. The next step is create a new variable with `let` called ``newWeapon`` and assign it to the ``weapons[curentWeapon].name``(*the increment in the currentWeapon makes it go to the next index in the weapons array*). Then, we set the text.innerText with a message using template literals. Then, we add this new weapon to the `inventory` array with ``inventory.push(newWeapon)`` method and add to the text other text that tell us which weapon we have in the ``inventory``. If this condition tests false, the ``text.innerText`` prints the message that we don't have enough gold. 
 
@@ -208,7 +210,7 @@ function buyWeapon() {
 }
 ```
 
-##### sellWeapon() function
+##### ``sellWeapon()`` function
 
 In this function, I will explain how each line works to sell a weapon of your ``inventory``. The first step is check if ``inventory.length`` is greater than ***1***. This prevents that the function sell a weapon that doesn't exist. Inside this ``if/else`` statement, we assign ***+15*** to the ``gold`` and this current value to the ``goldText.innerText`` value. After, we take out the first element of ``inventory`` array with ``inventory.shift()``. After that, the ``text.innerText`` receive two messages. If the condition is false, the ``else`` block code assings in the ``text.innerText`` a message saying preventing to don't sell your only weapon.
 
@@ -246,7 +248,7 @@ function fightDragon() {
 }
 ```
 
-##### goFight() function
+##### ``goFight()`` function
 
 First of all, this function calls ``update(locations[3])`` function with it's corresponding parameter. Then, set monsterHealth with value ``monsters[fighting].health`` to show the health of monsters. The next line makes the monster status appear, using ``monsterStatus.style.display = "block"``. Then, we set ``monsterName.innerText`` to ``monster[fighting].name`` and ``monsterHealthText.innerText`` to monsterHealth.
 
@@ -260,7 +262,7 @@ function goFight() {
 }
 ```
 
-##### attack() function
+##### ``attack()`` function
 
 Now is time to take more time to explain this complex and detailed function. The first thing that happens is set a text saying that monter attacked and which weapon you used, in ``text.innetText``. After it, our health is decreased with ``health -= getMonsterAttackValue(monsters[fighting].level);``. The ``getMonsterAttackValue()`` will be explain later. Now we have a conditional statement that checks if ``isMonsterHit()`` evaluates truthy. Is it is, ``monsterHealth`` is decreased using the following expression:
 
@@ -306,6 +308,29 @@ function attack() {
 }
 ```
 
+##### ``getMonsterAttackValue()`` function
+
+Now, this function has the purpose to calculate monster's attack value. Firt of all, we start declaring a cosnstant called ``hit`` that receives the following expression:
+
+> `const hit = (level * 5) - (Math.floor(Math.random() * xp));`
+
+This expression takews `level` parameter and multiples for **5** the subtract it of `Math.floor(Math.random() * xp)`. At the final, this function uses a ***ternary operator*** to return if hit is greater than ***0***. If it is, return the `hit`. If isn't, return ***0***.
+
+```javascript
+function getMonsterAttackValue(level) {
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
+  return hit > 0 ? hit : 0;
+}
+```
+##### ``isMonsterHit()`` function
+
+This function uses ``short-circuit evaluation``. This evaluation uses ``&&(AND)`` or ``||(OR)`` logic operators. Using the ``||(OR)`` makes the evaluation return the ***FIRST TRUTHY VALUE*** or the **LAST FALSY VALUE(*if all operands are falsy*)**. The value of returning is used in `attack()` function to decides if monster attacks or not.
+
+```javascript
+function isMonsterHit() {
+  return Math.random() > .2 || health < 20;
+}
+```
 
 ### Continued development
 
