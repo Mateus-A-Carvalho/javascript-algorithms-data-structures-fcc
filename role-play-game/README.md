@@ -26,6 +26,7 @@ This is a solution to the [Role Playing Game(RPG) - Website's challenge](https:/
         - [``attack()`` function](#attack-function)
         - [``getMonsterAttackValue()`` function](#getmonsterattackvalue-function)
         - [``isMonsterHit()`` function](#ismonsterhit-function)
+        - [dodge() function](#dodge-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -331,6 +332,10 @@ function isMonsterHit() {
   return Math.random() > .2 || health < 20;
 }
 ```
+
+##### dodge() function 
+
+This function has only purpose to set the ``text.innerText`` to "`You dodge the attack from the ${monsters[fighting].name}`", using template strings.
 
 ### Continued development
 
