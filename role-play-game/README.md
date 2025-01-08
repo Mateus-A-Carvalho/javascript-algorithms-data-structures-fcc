@@ -27,6 +27,7 @@ This is a solution to the [Role Playing Game(RPG) - Website's challenge](https:/
         - [``getMonsterAttackValue()`` function](#getmonsterattackvalue-function)
         - [``isMonsterHit()`` function](#ismonsterhit-function)
         - [dodge() function](#dodge-function)
+        - [defeatMonster() function](#defeatmonster-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -336,6 +337,20 @@ function isMonsterHit() {
 ##### dodge() function 
 
 This function has only purpose to set the ``text.innerText`` to "`You dodge the attack from the ${monsters[fighting].name}`", using template strings.
+
+##### defeatMonster() function
+
+Now, It's time to explain this function. At the beginning, we assign `Math.floor(monsters[fighting].level * 6.7))` to `gold` with **compound assigment operator** and `monster[fighting].level` to `xp` with same operator. Then, we set these variables(`gold` and `xp`) to the ``goldText.innerText`` and ``xpText.innerText`` respectivelly. At the final, the ``update(locations[4])`` is invoked.
+
+```javascript
+function defeatMonster() {
+  gold += Math.floor(monsters[fighting].level * 6.7);
+  xp += monsters[fighting].level;
+  goldText.innerText = gold;
+  xpText.innerText = xp;
+  update(locations[4]);
+}
+```
 
 ### Continued development
 
