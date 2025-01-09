@@ -28,6 +28,7 @@ This is a solution to the [Role Playing Game(RPG) - Website's challenge](https:/
         - [``isMonsterHit()`` function](#ismonsterhit-function)
         - [dodge() function](#dodge-function)
         - [defeatMonster() function](#defeatmonster-function)
+        - [lose(), winGame() and restart() functions](#lose-wingame-and-restart-functions)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -351,6 +352,33 @@ function defeatMonster() {
   update(locations[4]);
 }
 ```
+
+##### lose(), winGame() and restart() functions
+
+The first two functions only take the `locations` array and render all data that must be appear. The second function, ``restart()`` works when we lose or win. We set `xp` to **0**, `health` to **100**, `gold` to **50** and `currentWeapon` to **0**. Then, `inventory` array now will have only "stick" weapon. Now, we assing `goldText.innerText` to `gold`, `healthText.innerText` to `health` and `xpText.innerText` to `xp`. At the final, we call `goTown()` function.
+
+```javascript
+function lose() {
+  update(locations[5]);
+}
+
+function winGame() {
+  update(locations[6]);
+}
+
+function restart() {
+  xp = 0;
+  health = 100;
+  gold = 50;
+  currentWeapon = 0;
+  inventory = ["stick"];
+  goldText.innerText = gold;
+  healthText.innerText = health;
+  xpText.innerText = xp;
+  goTown();
+}
+```
+
 
 ### Continued development
 
