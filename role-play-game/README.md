@@ -26,9 +26,10 @@ This is a solution to the [Role Playing Game(RPG) - Website's challenge](https:/
         - [``attack()`` function](#attack-function)
         - [``getMonsterAttackValue()`` function](#getmonsterattackvalue-function)
         - [``isMonsterHit()`` function](#ismonsterhit-function)
-        - [dodge() function](#dodge-function)
-        - [defeatMonster() function](#defeatmonster-function)
-        - [lose(), winGame() and restart() functions](#lose-wingame-and-restart-functions)
+        - [``dodge()`` function](#dodge-function)
+        - [``defeatMonster()`` function](#defeatmonster-function)
+        - [``lose()``, ``winGame()`` and ``restart()`` functions](#lose-wingame-and-restart-functions)
+        - [``easterEgg()``, `pickTwo()`, `pickEight()` and `pick()` function](#easteregg-picktwo-pickeight-and-pick-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -335,11 +336,11 @@ function isMonsterHit() {
 }
 ```
 
-##### dodge() function 
+##### ``dodge()`` function 
 
 This function has only purpose to set the ``text.innerText`` to "`You dodge the attack from the ${monsters[fighting].name}`", using template strings.
 
-##### defeatMonster() function
+##### ``defeatMonster()`` function
 
 Now, It's time to explain this function. At the beginning, we assign `Math.floor(monsters[fighting].level * 6.7))` to `gold` with **compound assigment operator** and `monster[fighting].level` to `xp` with same operator. Then, we set these variables(`gold` and `xp`) to the ``goldText.innerText`` and ``xpText.innerText`` respectivelly. At the final, the ``update(locations[4])`` is invoked.
 
@@ -353,7 +354,7 @@ function defeatMonster() {
 }
 ```
 
-##### lose(), winGame() and restart() functions
+##### ``lose()``, ``winGame()`` and ``restart()`` functions
 
 The first two functions only take the `locations` array and render all data that must be appear. The second function, ``restart()`` works when we lose or win. We set `xp` to **0**, `health` to **100**, `gold` to **50** and `currentWeapon` to **0**. Then, `inventory` array now will have only "stick" weapon. Now, we assing `goldText.innerText` to `gold`, `healthText.innerText` to `health` and `xpText.innerText` to `xp`. At the final, we call `goTown()` function.
 
@@ -378,6 +379,18 @@ function restart() {
   goTown();
 }
 ```
+##### ``easterEgg()``, `pickTwo()`, `pickEight()` and `pick()` function
+
+The first three functions are very simply. `easterEgg()` function invokes `update(locations[7])` function. `pickTwo()` invokes `pick()` with **2** in argument and `pickEight()` invokes `pick()` with **8** in argument. 
+
+Now, the `pick` is a function more extesive. Let's begin to explain it. First of all, we declair a constant called `numbers` with am empty string. Then, a `while` repetition statement add **10** random numbers in that array.
+
+After it, `text.innerText` is set to `You picked ${guess}. Here are the random numbers:\n`. Then, a `for` loop print all elements of `numbers`.
+
+Now, an `if/else` checks if `numbers` array includes the `guess` parameter. If it is, `text.innerText` is assigned telling you win 20 gold. `gold` receive plus **20** and `goldText.innerText` receives `gold` value. 
+
+If isn't, `text.innerText` says that you lose **10** health. `health` receive minus **10** and `healthText.innerText` receives `health` value. At the final, theres is another condition that checks if you have **0** or minus health. If it is, the functon `lose()` are called and YOU LOSE!!!
+
 
 
 ### Continued development
