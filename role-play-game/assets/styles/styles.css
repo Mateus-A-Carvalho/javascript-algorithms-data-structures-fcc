@@ -17,10 +17,7 @@ body {
 body {
   background-color: #0a0a23;
   display: flex;
-}
-
-#game {
-  align-content: center;
+  /* flex-direction: column; */
 }
 
 #text {
@@ -34,8 +31,10 @@ body {
   max-height: 400px;
   background-color: #ffffff;
   color: #ffffff;
-  margin: 30px auto 0px;
+  /* margin: 30px auto 0px; */
   padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 #controls,
