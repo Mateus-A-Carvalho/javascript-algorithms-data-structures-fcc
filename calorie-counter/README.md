@@ -1,10 +1,10 @@
-# Project Name
+# Calouries Counter
 
 This is a solution to the [Project name - Website's challenge](). Project name challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
-- [Project Name](#project-name)
+- [Calouries Counter](#calouries-counter)
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
     - [The challenge](#the-challenge)
