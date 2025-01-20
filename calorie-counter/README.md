@@ -13,6 +13,7 @@ This is a solution to the [Calouries Counter - Freecodecamp.org](https://www.fre
     - [Built with](#built-with)
     - [Code explanation](#code-explanation)
     - [Main Variables](#main-variables)
+    - [`cleanInputString()` function](#cleaninputstring-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -56,8 +57,18 @@ const output = document.getElementById('output');
 let isError = false;
 ```
 
+### `cleanInputString()` function
 
+Starting with the first function that we have, this function have the purpose to clean a string passed as parameters. To do this, the most suitable is ***RegEx***. RegEx means *Regular Expressions* and is a resource in various programming languages that is used to match and find some expressions. 
 
+```javascript
+function cleanInputString(str) {
+  const regex = /[+-\s]/g;
+  return str.replace(regex, '');
+}
+```
+
+In this code, we assing a Regex to the const `regex`. This regex matches/find the patterns that have a plus or minus operator and spaces or any breaklines in every string. 
 
 ### Continued development
 
