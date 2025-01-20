@@ -12,6 +12,7 @@ This is a solution to the [Calouries Counter - Freecodecamp.org](https://www.fre
   - [My process](#my-process)
     - [Built with](#built-with)
     - [Code explanation](#code-explanation)
+    - [Main Variables](#main-variables)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -40,6 +41,22 @@ Add a screenshot of your solution. The easiest way to do this is to use Firefox 
 ### Code explanation
 
 I use this area to explain every function and feature of this code. I believe that teach is the best way to learn. Hope you enjoy!!!
+
+### Main Variables
+
+Like almost javascript code, it starts with a set of variables to store some important datas to this code. You can see these variables in code bellow:
+
+```javascript
+const calorieCounter = document.getElementById('calorie-counter');
+const budgetNumberInput = document.getElementById('budget');
+const entryDropdown = document.getElementById('entry-dropdown');
+const addEntryButton = document.getElementById('add-entry');
+const clearButton = document.getElementById('clear');
+const output = document.getElementById('output');
+let isError = false;
+```
+
+
 
 
 ### Continued development
