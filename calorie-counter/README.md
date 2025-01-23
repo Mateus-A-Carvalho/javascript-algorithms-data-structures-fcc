@@ -14,6 +14,7 @@ This is a solution to the [Calouries Counter - Freecodecamp.org](https://www.fre
     - [Code explanation](#code-explanation)
     - [Main Variables](#main-variables)
     - [`cleanInputString()` function](#cleaninputstring-function)
+    - [`isInvalidInput(str)` function](#isinvalidinputstr-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -68,7 +69,21 @@ function cleanInputString(str) {
 }
 ```
 
-In this code, we assing a Regex to the const `regex`. This regex matches/find the patterns that have a plus or minus operator and spaces or any breaklines in every string. After it, there is an ***flag*** that says to find in all text. After it
+In this code, we assing a Regex to the const `regex`. This regex matches/find the patterns that have a plus or minus operator and spaces or any breaklines in every string. After it, there is an ***flag*** that says to find in all text. After it, we return this string replacing the `regex` to an empty string.
+
+
+### `isInvalidInput(str)` function
+
+This functions works similarly to the `cleanInputString()` function. The difference between them is that `isInvalidInput` function return `String.prototype.matchd` that matches a string against a regex if it is a string, returning `null` if there is no matches or an array with matches if it works. This function will be usefull in another function soon.
+
+```javascript
+function isInvalidInput(str) {
+  const regex = /\d+e\d+/i;
+  return str.match(regex);
+}
+```
+
+
 
 ### Continued development
 
