@@ -68,7 +68,7 @@ function cleanInputString(str) {
 }
 ```
 
-In this code, we assing a Regex to the const `regex`. This regex matches/find the patterns that have a plus or minus operator and spaces or any breaklines in every string. After it, there is an ***flag*** that says to find in all text.
+In this code, we assing a Regex to the const `regex`. This regex matches/find the patterns that have a plus or minus operator and spaces or any breaklines in every string. After it, there is an ***flag*** that says to find in all text. After it
 
 ### Continued development
 
