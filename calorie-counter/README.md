@@ -15,6 +15,7 @@ This is a solution to the [Calouries Counter - Freecodecamp.org](https://www.fre
     - [Main Variables](#main-variables)
     - [`cleanInputString()` function](#cleaninputstring-function)
     - [`isInvalidInput(str)` function](#isinvalidinputstr-function)
+    - [``addEntry()`` function](#addentry-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -82,7 +83,7 @@ function isInvalidInput(str) {
   return str.match(regex);
 }
 ```
-
+### ``addEntry()`` function
 
 
 ### Continued development
