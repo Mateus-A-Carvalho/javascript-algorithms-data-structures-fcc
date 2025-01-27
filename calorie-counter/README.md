@@ -85,7 +85,7 @@ function isInvalidInput(str) {
 ```
 ### ``addEntry()`` function
 
-This function
+This function has the purpose
 
 
 ### Continued development
