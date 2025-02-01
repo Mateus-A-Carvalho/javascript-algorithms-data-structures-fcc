@@ -85,7 +85,7 @@ function isInvalidInput(str) {
 ```
 ### ``addEntry()`` function
 
-This function has the purpose lead with an entry that will be added. First of all, there is three constants to store some valeus. The first is `targetInputContainer` that has the input container. In this value we can we ***template strings*** to dynamically select the element with `input-container` class inside the `entryDropdown` element. 
+This function has the purpose lead with an entry that will be added. First of all, there is three constants to store some valeus. The first is `targetInputContainer` that has the input container. In this value we can we ***template strings*** to dynamically select the element with `input-container` class inside the `entryDropdown` element. In the second lind, we declare `entryNumber` and assing it an array with all `inputs` with attribute `type="text"`, at the final adding ***1*** for the index and the length has the same number and value. Remember, in Javascript, index os array always start at ***0***. 
 
 ```javascript
 function addEntry() {
