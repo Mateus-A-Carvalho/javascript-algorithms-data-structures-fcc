@@ -16,6 +16,7 @@ This is a solution to the [Calouries Counter - Freecodecamp.org](https://www.fre
     - [`cleanInputString()` function](#cleaninputstring-function)
     - [`isInvalidInput(str)` function](#isinvalidinputstr-function)
     - [``addEntry()`` function](#addentry-function)
+    - [`calculateCalories(e)` function](#calculatecaloriese-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -104,7 +105,7 @@ function addEntry() {
   targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
 }
 ```
-
+### `calculateCalories(e)` function
 
 ### Continued development
 
