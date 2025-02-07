@@ -107,7 +107,7 @@ function addEntry() {
 ```
 ### `calculateCalories(e)` function
 
-This function calculates the total of calories. First of all, this function takes an `e` parameters thats means an ***event***.
+This function calculates the total of calories. First of all, this function takes an `e` parameters thats is a convension meaning ***event***. Then, we use a known method called `preventDefault()`. This method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur. 
 
 ```javascript
 function calculateCalories(e) {
