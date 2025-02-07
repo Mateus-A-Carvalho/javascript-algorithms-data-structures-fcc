@@ -107,7 +107,7 @@ function addEntry() {
 ```
 ### `calculateCalories(e)` function
 
-This function calculates the total of calories
+This function calculates the total of calories. First of all, this function takes an `e` parameters thats means an ***event***.
 
 ```javascript
 function calculateCalories(e) {
@@ -145,6 +145,8 @@ function calculateCalories(e) {
   output.classList.remove('hide');
 }
 ```
+
+
 
 ### Continued development
 
