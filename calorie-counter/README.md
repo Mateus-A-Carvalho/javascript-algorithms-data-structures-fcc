@@ -107,7 +107,18 @@ function addEntry() {
 ```
 ### `calculateCalories(e)` function
 
-This function calculates the total of calories. First of all, this function takes an `e` parameters thats is a convension meaning ***event***. Then, we use a known method called `preventDefault()`. This method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur. 
+This function calculates the total of calories. First of all, this function takes an `e` parameters thats is a convension meaning ***event***. Then, we use a known method called `preventDefault()`. This method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur. The code that shows the function being invoked without parameters is bellow:
+
+```javascript
+clearButton.addEventListener("click", clearForm);
+addEntryButton.addEventListener("click", addEntry);
+calorieCounter.addEventListener("submit", calculateCalories);
+```
+
+ The `e` parameter is passed on the invoking of this function. This is what we call of "Callback Pattern". It is an important programming pattern in Javascript that allows to pass an argument to a function that will be executed later.
+
+
+After we prevent the `form` element to submit the data, we assing `isError` control variable to `false`. After it we create a set of variables with `const` to store node-lists of elements with `querySelectorAll` method. 
 
 ```javascript
 function calculateCalories(e) {
