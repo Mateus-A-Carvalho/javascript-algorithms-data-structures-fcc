@@ -120,6 +120,8 @@ calorieCounter.addEventListener("submit", calculateCalories);
 
 After we prevent the `form` element to submit the data, we assing `isError` control variable to `false`. After it we create a set of variables with `const` to store node-lists of elements with `querySelectorAll` method. 
 
+Then, there will be another set of variables that will store the result of returning of `getCaloriesFromInputs()` function.
+
 ```javascript
 function calculateCalories(e) {
   e.preventDefault();
