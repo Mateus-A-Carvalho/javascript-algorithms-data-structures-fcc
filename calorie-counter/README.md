@@ -118,9 +118,14 @@ calorieCounter.addEventListener("submit", calculateCalories);
  The `e` parameter is passed on the invoking of this function. This is what we call of "Callback Pattern". It is an important programming pattern in Javascript that allows to pass an argument to a function that will be executed later.
 
 
-After we prevent the `form` element to submit the data, we assing `isError` control variable to `false`. After it we create a set of variables with `const` to store node-lists of elements with `querySelectorAll` method. 
+After we prevent the `form` element to submit the data, we assing `isError` control variable to `false`. This will be useful to check if there is any error later. After it we create a set of variables with `const` to store node-lists of elements with `querySelectorAll` method. 
 
-Then, there will be another set of variables that will store the result of returning of `getCaloriesFromInputs()` function.
+Then, there will be another set of variables that will store the result of returning of `getCaloriesFromInputs()` function. After that, we check if there is an error. We create a `if/else` and if `isError` test `true` we quit the function. 
+
+After it, we create three variables, `consumedCalories`, `remaingCalories` and `surplusOrDeficit`. `consumedCaloires` will sum all calories stored. `remainingCalories` will sum `consumedCalories` plus `exerciseCalories` and decrease to `budgetCalories`. `surpluesOrDeficit` will check a condiction with a `ternary operator`. This operator will check if `remaingingCalories` is less than `0`. If it is, return a string with `'Surplus'`. If not, return a string with `'Deficit'`. 
+
+Then, we set `innerHTML` of `output` with a `template strings` to add a few elements dinamically in `HTML`. After added the the elements, we remove the class `hide` of `output`.
+
 
 ```javascript
 function calculateCalories(e) {
