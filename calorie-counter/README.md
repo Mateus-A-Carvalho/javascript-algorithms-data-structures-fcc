@@ -17,6 +17,7 @@ This is a solution to the [Calouries Counter - Freecodecamp.org](https://www.fre
     - [`isInvalidInput(str)` function](#isinvalidinputstr-function)
     - [``addEntry()`` function](#addentry-function)
     - [`calculateCalories(e)` function](#calculatecaloriese-function)
+    - [`getCaloriesFromInputs()` function](#getcaloriesfrominputs-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -164,6 +165,30 @@ function calculateCalories(e) {
 }
 ```
 
+### `getCaloriesFromInputs()` function
+
+This function calculates the total of calories. First of all, this function takes an `list` parameters. After it, we set a `calories` to zero because our sum always have to starts at zero. 
+
+Then, there is a `for...of` loop. This statement iterates throught values of iterable object(***in this case, is an array***).
+
+```javascript
+function getCaloriesFromInputs(list) {
+  let calories = 0;
+
+  for (const item of list) {
+    const currVal = cleanInputString(item.value);
+    const invalidInputMatch = isInvalidInput(currVal);
+
+    if (invalidInputMatch) {
+      alert(`Invalid Input: ${invalidInputMatch[0]}`);
+      isError = true;
+      return null;
+    }
+    calories += Number(currVal);
+  }
+  return calories;
+}
+```
 
 
 ### Continued development
