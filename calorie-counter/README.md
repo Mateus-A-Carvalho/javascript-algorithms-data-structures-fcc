@@ -169,7 +169,10 @@ function calculateCalories(e) {
 
 This function calculates the total of calories. First of all, this function takes an `list` parameters. After it, we set a `calories` to zero because our sum always have to starts at zero. 
 
-Then, there is a `for...of` loop. This statement iterates throught values of iterable object(***in this case, is an array***).
+Then, there is a `for...of` loop. This statement iterates throught values of iterable object(***in this case, it is an array***). Inside this loop, we set two variables, `currVal` and `invalideInputMatch`, both calling the functions `cleanInputString(item.value)` and `isInvalidInput(currVal)`, respectvely.
+
+
+After it, there is an `if/else` statement. If `isInvalidInput` test true, we will send an alert with `alert` with "**Invalid Input: `${invalidInputMatch[0]}`**"
 
 ```javascript
 function getCaloriesFromInputs(list) {
