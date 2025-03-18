@@ -18,6 +18,7 @@ This is a solution to the [Calouries Counter - Freecodecamp.org](https://www.fre
     - [``addEntry()`` function](#addentry-function)
     - [`calculateCalories(e)` function](#calculatecaloriese-function)
     - [`getCaloriesFromInputs()` function](#getcaloriesfrominputs-function)
+    - [`clearForm()` Function](#clearform-function)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -195,6 +196,27 @@ function getCaloriesFromInputs(list) {
 }
 ```
 
+### `clearForm()` Function
+
+This function clears the form. First of all, we create a variable `inputContainers` and assign it the returning of `Array.from(document.querySelectorAll('.input-container'))` method. This method creates an array of any **iterable** object or with **length** property. 
+
+After that, there is a `for...of` loop that takes the element `container` and clear it, setting an empty string to the `innerHTML` property.
+
+Finally, we set `budgetNumberInput.value` and `output.innerText` to an empty string. Also, we hide the output with `output.classList.add('hide')`
+
+
+```javascript
+const inputContainers = Array.from(document.querySelectorAll('.input-container'));
+
+  for (const container of inputContainers) {
+    container.innerHTML = '';
+  }
+
+  budgetNumberInput.value = '';
+  output.innerText = '';
+  output.classList.add('hide');
+}
+```
 
 ### Continued development
 
