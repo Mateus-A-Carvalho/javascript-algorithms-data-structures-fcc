@@ -19,6 +19,7 @@ This is a solution to the [Calouries Counter - Freecodecamp.org](https://www.fre
     - [`calculateCalories(e)` function](#calculatecaloriese-function)
     - [`getCaloriesFromInputs()` function](#getcaloriesfrominputs-function)
     - [`clearForm()` Function](#clearform-function)
+    - [Event Listeners](#event-listeners)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -216,6 +217,16 @@ const inputContainers = Array.from(document.querySelectorAll('.input-container')
   output.innerText = '';
   output.classList.add('hide');
 }
+```
+
+### Event Listeners 
+
+At the last section of this explanation, we have just three lines of code. These lines are `addEventListener` methods. The first one call on `clearButton`, the second one on `addEntryButton` and the last one on `calorieCounter`. 
+
+```javascript
+clearButton.addEventListener("click", clearForm);
+addEntryButton.addEventListener("click", addEntry);
+calorieCounter.addEventListener("submit", calculateCalories);
 ```
 
 ### Continued development
